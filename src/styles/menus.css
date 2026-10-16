@@ -1,0 +1,59 @@
+.menu-item-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+}
+
+.column-menu .menu-item {
+    padding-left: 0.6rem;
+}
+
+.column-extra .menu-item {
+    padding-right: 0.6rem;
+}
+
+.menu-item {
+    color: #FFFFFF;
+}
+
+.menu-item .icon {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0.6rem;
+
+    background: #071346;
+    background: radial-gradient(circle, rgba(7, 19, 70, 1) 0%, rgba(18, 52, 186, 1) 100%);
+    border-radius: 100%;
+    color: #FFFFFF;
+}
+
+.menu-item .icon i {
+    font-size: 4rem;
+}
+
+.menu-item:hover .icon {
+    outline: 0.1rem solid #FFFFFF;
+}
+
+.menu-item:hover .text, .menu-item.active .text {
+    opacity: 1;
+}
+
+.menu-item.active .icon {
+    background: #524E9F;
+    background: linear-gradient(90deg, rgba(70, 65, 170, 1) 0%, rgba(184, 61, 126, 1) 100%);
+    box-shadow: 0 0 0.18rem #c1b098 inset;
+}
+
+.menu-item .text{
+    margin-left: 0.8rem;
+    margin-right: 4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.6;
+    display: none;
+}

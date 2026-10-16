@@ -1,0 +1,43 @@
+---
+import { Font } from "astro:assets";
+
+import "../styles/global.css";
+import "../styles/menus.css";
+
+import MenuLeft from "../components/MenuLeft.astro";
+import MenuRight from "../components/MenuRight.astro";
+
+const { pageTitle = "Thomas's Portfolio", pageID = "" } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+        <Font cssVariable="--font-chivo" preload />
+
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		
+        <meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta charset="utf-8" />
+
+		<script
+			src="https://kit.fontawesome.com/8dd184e6f2.js"
+			crossorigin="anonymous"></script>
+
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<div class="main-hero">
+			<MenuLeft active={pageID} />
+
+			<div class="column-main">
+				<slot>
+                    <h1>Error state</h1>
+                </slot>
+			</div>
+
+			<MenuRight />
+		</div>
+	</body>
+</html>

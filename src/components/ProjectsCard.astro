@@ -1,0 +1,68 @@
+---
+const { id, title, artist, cover, rating } = Astro.props;
+---
+
+<div
+    class="project no-hover"
+    onmouseover="this.classList.add('hover'); this.classList.remove('no-hover');"
+    onmouseout="this.classList.remove('hover'); this.classList.add('no-hover');"
+>
+    <a href={`/project?id=${id}`}>
+        <div class="card-box-small">
+            <div class="card-title">
+                <h2>{title}</h2>
+            </div>
+            <div class="card-image">
+                <img src={cover} alt="IMAGE" />
+            </div>
+            <div class="card-difficulty-stars">
+                <div class="stars-div">
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-box-large">
+            <div class="card-title">
+                <h2>{title}</h2>
+                <p>{artist}</p>
+            </div>
+            <div class="card-image">
+                <img src={cover} alt="IMAGE" />
+            </div>
+            <div class="card-difficulty-stars">
+                <div class="stars-div">
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                    <span>
+                        <img src={`/score-star-${rating}.png`} alt="" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

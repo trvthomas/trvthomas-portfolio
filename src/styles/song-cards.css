@@ -1,0 +1,113 @@
+.project{
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.card-box-large{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.project.hover .card-box-large{
+    display: block;
+}
+
+.project.no-hover .card-box-large{
+    display: none;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: center;
+    border-radius: 0.4rem;
+}
+
+.card-box-large .card-image img {
+    border-radius: 0;
+}
+
+.card-box-large .card-title {
+    padding: 0.3rem;
+    padding-bottom: 0;
+}
+
+.card-title h2 {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.card-box-large .card-title h2 {
+    margin-bottom: 0;
+}
+
+.card-title p {
+    color: #E6E6E6;
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+    font-weight: 200;
+}
+
+.card-box-large {
+    -webkit-animation: grow-card 0.08s ease-in;
+    animation: grow-card 0.08s ease-in;
+
+    background-color: #0C2278;
+    border: 0.1rem solid #FFFFFF;
+    transform: scale(1.15);
+    border-radius: 0.4rem;
+}
+
+.card-difficulty-stars {
+    padding: 0.3rem;
+    padding-top: 0;
+}
+
+.stars-div {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    height: 2.5vh;
+}
+
+.stars-div span{
+    height: 100%;
+}
+
+.stars-div span img{
+    width: 100%;
+    height: 100%;
+}
+
+@-webkit-keyframes grow-card {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes grow-card {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+}

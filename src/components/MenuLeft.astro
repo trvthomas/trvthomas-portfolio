@@ -1,0 +1,81 @@
+---
+const { active } = Astro.props;
+---
+
+<div class="column-menu">
+    <div class="menu-item-group">
+        <a
+            class={`menu-item ${active === "search" ? "active" : ""}`}
+            href="/search"
+        >
+            <span class="icon">
+                <i class="fa-solid fa-magnifying-glass fa-fw"></i>
+            </span>
+
+            <span class="text">Search</span>
+        </a>
+        <a class={`menu-item ${active === "pending" ? "active" : ""}`} href="/">
+            <span class="icon">
+                <i class="fa-regular fa-bell fa-fw"></i>
+            </span>
+
+            <span class="text">Pending</span>
+        </a>
+    </div>
+
+    <div class="menu-item-group">
+        <a class={`menu-item ${active === "home" ? "active" : ""}`} href="/">
+            <span class="icon">
+                <i class="fa-regular fa-house fa-fw"></i>
+            </span>
+
+            <span class="text">Home</span>
+        </a>
+
+        <a
+            class={`menu-item ${active === "projects" ? "active" : ""}`}
+            href="/projects"
+        >
+            <span class="icon">
+                <i class="fa-solid fa-music fa-fw"></i>
+            </span>
+
+            <span class="text">Projects</span>
+        </a>
+
+        <a
+            class={`menu-item ${active === "experiments" ? "active" : ""}`}
+            href="/experiments"
+        >
+            <span class="icon">
+                <i class="fa-solid fa-flask fa-fw"></i>
+            </span>
+
+            <span class="text">Experiments</span>
+        </a>
+
+        <a
+            class={`menu-item ${active === "about-me" ? "active" : ""}`}
+            href="/about-me"
+        >
+            <span class="icon">
+                <i class="fa-solid fa-clipboard-user fa-fw"></i>
+            </span>
+
+            <span class="text">About Me</span>
+        </a>
+    </div>
+
+    <div class="menu-item-group">
+        <a
+            class={`menu-item ${active === "settings" ? "active" : ""}`}
+            href="/settings"
+        >
+            <span class="icon">
+                <i class="fa-solid fa-gear fa-fw"></i>
+            </span>
+
+            <span class="text">Settings</span>
+        </a>
+    </div>
+</div>

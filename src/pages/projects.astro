@@ -1,0 +1,23 @@
+---
+import "../styles/song-cards.css";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectsCard.astro";
+import projects from "../data/projects.json";
+---
+
+<BaseLayout pageTitle="Projects!" pageID="projects">
+	<div class="columns-projects">
+		{
+			projects.map((project) => (
+				<ProjectCard
+					id={project.id}
+					title={project.title}
+					artist={project.artist}
+					cover={project.cover}
+					rating={project.rating}
+				/>
+			))
+		}
+	</div>
+</BaseLayout>
