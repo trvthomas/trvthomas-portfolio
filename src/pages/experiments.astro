@@ -1,0 +1,45 @@
+---
+import "../styles/projects.css";
+import "../styles/song-cards.css";
+import "../styles/experiments.css";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectsCard.astro";
+import experiments from "../data/experiments.json";
+---
+
+<BaseLayout pageTitle="Experiments" pageID="experiments">
+	<section>
+		<div class="experiments-banner">
+			<div class="banner-icon">
+				<div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="60%" height="auto" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 2.75h4v6.1L16.96 14H7.04L10 8.85ZM7.04 14h9.92l2.24 3.9a2.25 2.25 0 0 1-1.95 3.35H6.79a2.25 2.25 0 0 1-1.95-3.35ZM8.5 2.75h7"/></svg>
+				</div>
+			</div>
+			<div>
+				<h1>Discover Experiments</h1>
+				<p>
+					Random, small, or incomplete ideas exploring design trends,
+					web frameworks or libraries, and robotics components.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="projects-title"></h2>
+		<div class="columns-projects">
+			{
+				experiments.map((experiment) => (
+					<ProjectCard
+						id={experiment.id}
+						title={experiment.title}
+						artist={experiment.artist}
+						cover={experiment.cover}
+						rating={experiment.rating}
+					/>
+				))
+			}
+		</div>
+	</section>
+</BaseLayout>

@@ -1,5 +1,7 @@
 ---
 import "../styles/song-cards.css";
+import "../styles/home.css";
+import "../styles/projects.css";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectsCard.astro";
@@ -7,6 +9,43 @@ import projects from "../data/projects.json";
 ---
 
 <BaseLayout pageTitle="Home" pageID="home">
-	<h1>Yeii, home!</h1>
-	<h1>Supersonic</h1>
+	<div class="home-banner">
+		<img src="/view-all-image.png" />
+		<div>
+			<h1>Featured project?</h1>
+			<p>Or just a poster idk</p>
+		</div>
+	</div>
+
+	<h2 class="projects-title">Featured Projects</h2>
+	<div class="columns-projects">
+		{
+			projects
+				.slice(0, 3)
+				.map((project) => (
+					<ProjectCard
+						id={project.id}
+						title={project.title}
+						artist={project.artist}
+						cover={project.cover}
+						rating={project.rating}
+					/>
+				))
+		}
+
+		<a class="project no-hover" href="/projects">
+			<div class="card-box-viewmore">
+				<div class="card-title">
+					<h2>View all</h2>
+				</div>
+				<div class="card-image">
+					<img src="/view-all-image.png" alt="" />
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><circle cx="12" cy="12" r="9.25"/><path d="M12 8.25v7.5M8.25 12h7.5"/></g></svg>
+						<p>View All</p>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
 </BaseLayout>

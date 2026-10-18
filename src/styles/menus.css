@@ -7,13 +7,11 @@
 
 .column-menu .menu-item {
     padding-left: 0.6rem;
+    color: #FFFFFF;
 }
 
 .column-extra .menu-item {
     padding-right: 0.6rem;
-}
-
-.menu-item {
     color: #FFFFFF;
 }
 
@@ -24,36 +22,90 @@
     border-radius: 50%;
     text-align: center;
     padding: 0.6rem;
+    text-align: center;
+    vertical-align: middle;
 
     background: #071346;
     background: radial-gradient(circle, rgba(7, 19, 70, 1) 0%, rgba(18, 52, 186, 1) 100%);
     border-radius: 100%;
+    outline: 0.1rem solid rgba(255, 255, 255, 0.2);
     color: #FFFFFF;
-}
-
-.menu-item .icon i {
-    font-size: 4rem;
 }
 
 .menu-item:hover .icon {
     outline: 0.1rem solid #FFFFFF;
+    outline-offset: 0.1rem;
 }
 
-.menu-item:hover .text, .menu-item.active .text {
+.menu-item:hover .text,
+.menu-item.active .text {
     opacity: 1;
 }
 
 .menu-item.active .icon {
     background: #524E9F;
-    background: linear-gradient(90deg, rgba(70, 65, 170, 1) 0%, rgba(184, 61, 126, 1) 100%);
-    box-shadow: 0 0 0.18rem #c1b098 inset;
+    background: linear-gradient(90deg, rgba(83, 18, 172, 1) 0%, rgba(195, 34, 125, 1) 100%);
+    outline: 0.14rem solid rgba(194, 56, 173, 0.9);
 }
 
-.menu-item .text{
+.menu-item .text {
     margin-left: 0.8rem;
     margin-right: 4rem;
     font-size: 0.9rem;
     font-weight: 600;
     opacity: 0.6;
     display: none;
+}
+
+#menu-desktop {
+    display: block;
+}
+
+#menu-mobile {
+    display: none;
+}
+
+#mobile-menu-more {
+    display: none;
+    margin-top: 1.5rem;
+}
+
+#mobile-menu-more .menu-item:last-child{
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #menu-desktop {
+        display: none;
+    }
+
+    #menu-mobile {
+        display: block;
+    }
+
+    .menu-item{
+        width: 26%;
+    }
+
+    .menu-item-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .column-menu .menu-item {
+        padding: 0;
+        text-align: center;
+    }
+
+    .menu-item .text {
+        display: block;
+        margin: 0;
+        margin-top: 0.2rem;
+    }
+
+    #menu-mobile.show-all #mobile-menu-more {
+        display: flex;
+    }
 }

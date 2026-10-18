@@ -1,0 +1,17 @@
+.columns-projects {
+    margin-top: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.projects-title{
+    color: #82DFFD;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 1.4rem;
+    opacity: 0.95;
+}

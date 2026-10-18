@@ -1,0 +1,59 @@
+---
+import "../styles/projects.css";
+import "../styles/about-me.css";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout pageTitle="About Me" pageID="about-me">
+	<div class="columns-projects">
+		<div class="column-buttons">
+			<img src="/thom-pic.png" />
+			<a href="/">
+				<div class="about-me-button">
+					<div class="icon">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="5rem"
+							height="5em"
+							viewBox="0 0 24 24"
+							><path d="M0 0h24v24H0z" fill="none"></path><g
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><rect
+									width="5"
+									height="12.5"
+									x="2.75"
+									y="5.75"
+									stroke-width="1.5"
+									rx="1.5"></rect><rect
+									width="5"
+									height="12.5"
+									x="16.25"
+									y="5.75"
+									stroke-width="1.5"
+									rx="1.5"></rect><path
+									stroke-width="1.5"
+									d="m7.75 7.25l2.13-1.5L12 7.25l2.13-1.5l2.12 1.5v9.5l-2.12 1.5l-2.13-1.5l-2.12 1.5l-2.13-1.5Z"
+								></path><path
+									stroke-width="2"
+									d="M5.25 9v.01m0 2.99v.01m0 2.99v.01"
+								></path></g
+							></svg
+						>
+					</div>
+					<div class="text">
+						<h3>Title</h3>
+						<p>Extra small desc</p>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="column-image">
+			<img src="/frame.png" />
+			<img src="/thom-pic.png" />
+		</div>
+	</div>
+</BaseLayout>

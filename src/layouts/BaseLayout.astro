@@ -28,8 +28,8 @@ const { pageTitle = "Thomas's Portfolio", pageID = "" } = Astro.props;
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<div class="main-hero">
-			<MenuLeft active={pageID} />
+		<section class="main-hero">
+			<MenuLeft isActive={pageID} />
 
 			<div class="column-main">
 				<slot>
@@ -38,6 +38,6 @@ const { pageTitle = "Thomas's Portfolio", pageID = "" } = Astro.props;
 			</div>
 
 			<MenuRight />
-		</div>
+		</section>
 	</body>
 </html>

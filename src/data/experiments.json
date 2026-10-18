@@ -1,0 +1,31 @@
+[
+  {
+    "id": "proj1",
+    "title": "Experiment #1",
+    "artist": "Robotics & C++",
+    "cover": "/covers/cover-1.png",
+    "rating": "megastar",
+    "category": "robotics"
+  },
+  {
+    "id": "proj1",
+    "title": "Experiment #1",
+    "artist": "Robotics & C++",
+    "cover": "/covers/cover-1.png",
+    "rating": "megastar"
+  },
+  {
+    "id": "proj1",
+    "title": "Experiment #1",
+    "artist": "Robotics & C++",
+    "cover": "/covers/cover-1.png",
+    "rating": "megastar"
+  },
+  {
+    "id": "proj1",
+    "title": "Experiment #1",
+    "artist": "Robotics & C++",
+    "cover": "/covers/cover-1.png",
+    "rating": "megastar"
+  }
+]

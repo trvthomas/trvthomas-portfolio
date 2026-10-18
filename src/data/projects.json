@@ -1,59 +1,67 @@
 [
   {
     "id": "proj1",
-    "title": "Project #1",
-    "artist": "Robotics & C++",
+    "title": "Celebration",
+    "artist": "Equinox Stars",
     "cover": "/covers/cover-1.png",
-    "rating": "megastar"
-  },
-  {
+    "rating": "megastar",
+    "category": "robotics"
+},
+{
     "id": "proj1",
     "title": "Project #1",
     "artist": "Robotics & C++",
     "cover": "/covers/cover-1.png",
-    "rating": "megastar"
-  },
-  {
+    "rating": "yellow",
+    "category": "robotics"
+},
+{
     "id": "proj1",
     "title": "Project #1",
     "artist": "Robotics & C++",
     "cover": "/covers/cover-1.png",
-    "rating": "megastar"
-  },
-  {
+    "rating": "megastar",
+    "category": "web"
+},
+{
     "id": "proj1",
     "title": "Project #1",
     "artist": "Robotics & C++",
     "cover": "/covers/cover-1.png",
-    "rating": "megastar"
-  },
-  {
+    "rating": "yellow",
+    "category": "web"
+},
+{
     "id": "proj1",
     "title": "Project #1",
     "artist": "Robotics & C++",
     "cover": "/covers/cover-1.png",
-    "rating": "megastar"
-  },
-  {
+    "rating": "megastar",
+    "category": "web"
+},
+{
     "id": "proj1",
     "title": "Project #1",
     "artist": "Robotics & C++",
     "cover": "/covers/cover-1.png",
-    "rating": "megastar"
-  },
-  {
+    "rating": "yellow",
+    "category": "design"
+},
+{
     "id": "proj1",
     "title": "Project #1",
     "artist": "Robotics & C++",
     "cover": "/covers/cover-1.png",
-    "rating": "megastar"
-  },
-  {
+    "rating": "megastar",
+    "category": "design"
+},
+{
     "id": "proj1",
     "title": "Project #1",
     "artist": "Robotics & C++",
     "cover": "/covers/cover-1.png",
-    "rating": "megastar"
+    "rating": "yellow",
+    "category": "design"
   },
   {
     "id": "proj1",

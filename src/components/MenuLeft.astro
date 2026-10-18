@@ -1,81 +1,411 @@
 ---
-const { active } = Astro.props;
+const { isActive } = Astro.props;
 ---
 
-<div class="column-menu">
-    <div class="menu-item-group">
-        <a
-            class={`menu-item ${active === "search" ? "active" : ""}`}
-            href="/search"
-        >
-            <span class="icon">
-                <i class="fa-solid fa-magnifying-glass fa-fw"></i>
-            </span>
+<nav id="menu-desktop">
+    <div class="column-menu">
+        <div class="menu-item-group">
+            <a
+                class:list={["menu-item", { active: isActive === "search" }]}
+                href="/search"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><path
+                                d="M9.75 2.75a7 7 0 1 1 0 14a7 7 0 1 1 0-14m7.69 12.04l2.47 2.47q1.24 1.24 0 2.48l-.17.17q-1.24 1.24-2.48 0l-2.47-2.47q-1.24-1.24 0-2.48l.17-.17q1.24-1.24 2.48 0"
+                            ></path><path d="M6.25 9.75a3.5 3.5 0 0 1 3.5-3.5"
+                            ></path></g
+                        ></svg
+                    >
+                </span>
 
-            <span class="text">Search</span>
-        </a>
-        <a class={`menu-item ${active === "pending" ? "active" : ""}`} href="/">
-            <span class="icon">
-                <i class="fa-regular fa-bell fa-fw"></i>
-            </span>
+                <span class="text">Search</span>
+            </a>
+            <a
+                class:list={["menu-item", { active: isActive === "pending" }]}
+                href="/"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M12 3.25a6 6 0 0 0-6 6v3.6c0 .7-.25 1.4-.7 1.95l-.6.75c-.6.75-.1 1.95.9 1.95h12.8c1 0 1.5-1.2.9-1.95l-.6-.75c-.45-.55-.7-1.25-.7-1.95v-3.6a6 6 0 0 0-6-6m-2.25 17c.55.6 1.3.95 2.25.95s1.7-.35 2.25-.95"
+                        ></path></svg
+                    >
+                </span>
 
-            <span class="text">Pending</span>
-        </a>
+                <span class="text">Pending</span>
+            </a>
+        </div>
+
+        <div class="menu-item-group">
+            <a
+                class:list={["menu-item", { active: isActive === "home" }]}
+                href="/"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><path
+                                d="M3.75 9.75L12 3.25l8.25 6.5v8.5a2 2 0 0 1-2 2H5.75a2 2 0 0 1-2-2Z"
+                            ></path><path
+                                d="M9.75 20.25V15.5a2.25 2.25 0 0 1 4.5 0v4.75"
+                            ></path></g
+                        ></svg
+                    >
+                </span>
+
+                <span class="text">Home</span>
+            </a>
+
+            <a
+                class:list={["menu-item", { active: isActive === "projects" }]}
+                href="/projects"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="square"
+                            stroke-miterlimit="2"
+                            stroke-width="1.5"
+                            ><path
+                                d="M9 17.25V5.533l.8-.163l9.5-1.9l1.2-.245V15.25"
+                            ></path><circle cx="6.25" cy="17.25" r="2.75"
+                            ></circle><circle cx="17.75" cy="15.25" r="2.75"
+                            ></circle></g
+                        ></svg
+                    >
+                </span>
+
+                <span class="text">Projects</span>
+            </a>
+
+            <a
+                class:list={[
+                    "menu-item",
+                    { active: isActive === "experiments" },
+                ]}
+                href="/experiments"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M10 2.75h4v6.1L16.96 14H7.04L10 8.85ZM7.04 14h9.92l2.24 3.9a2.25 2.25 0 0 1-1.95 3.35H6.79a2.25 2.25 0 0 1-1.95-3.35ZM8.5 2.75h7"
+                        ></path></svg
+                    >
+                </span>
+
+                <span class="text">Experiments</span>
+            </a>
+
+            <a
+                class:list={["menu-item", { active: isActive === "about-me" }]}
+                href="/about-me"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><rect
+                                width="18.5"
+                                height="18.5"
+                                x="2.75"
+                                y="2.75"
+                                rx="4"></rect><circle cx="12" cy="10" r="3"
+                            ></circle><path
+                                d="M6.75 21.25c.6-2.75 2.75-4.5 5.25-4.5s4.65 1.75 5.25 4.5"
+                            ></path></g
+                        ></svg
+                    >
+                </span>
+
+                <span class="text">About Me</span>
+            </a>
+        </div>
+
+        <div class="menu-item-group">
+            <a
+                class:list={["menu-item", { active: isActive === "settings" }]}
+                href="/settings"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><path
+                                d="m10.36 4.57l.1-.96q.07-.74.82-.74h1.44q.75 0 .82.74l.1.96q.07.74.76 1.03l.43.18q.69.29 1.27-.19l.74-.61q.58-.48 1.11.05l1.02 1.02q.53.53.05 1.11l-.61.74q-.48.58-.19 1.27l.18.43q.29.69 1.03.76l.96.1q.74.07.74.82v1.44q0 .75-.74.82l-.96.1q-.74.07-1.03.76l-.18.43q-.29.69.19 1.27l.61.74q.48.58-.05 1.11l-1.02 1.02q-.53.53-1.11.05l-.74-.61q-.58-.48-1.27-.19l-.43.18q-.69.29-.76 1.03l-.1.96q-.07.74-.82.74h-1.44q-.75 0-.82-.74l-.1-.96q-.07-.74-.76-1.03l-.43-.18q-.69-.29-1.27.19l-.74.61q-.58.48-1.11-.05l-1.02-1.02q-.53-.53-.05-1.11l.61-.74q.48-.58.19-1.27l-.18-.43q-.29-.69-1.03-.76l-.96-.1q-.74-.07-.74-.82v-1.44q0-.75.74-.82l.96-.1q.74-.07 1.03-.76l.18-.43q.29-.69-.19-1.27l-.61-.74q-.48-.58.05-1.11l1.02-1.02q.53-.53 1.11-.05l.74.61q.58.48 1.27.19l.43-.18q.69-.29.76-1.03"
+                            ></path><circle cx="12" cy="12" r="3"></circle></g
+                        ></svg
+                    >
+                </span>
+
+                <span class="text">Settings</span>
+            </a>
+        </div>
     </div>
+</nav>
 
-    <div class="menu-item-group">
-        <a class={`menu-item ${active === "home" ? "active" : ""}`} href="/">
-            <span class="icon">
-                <i class="fa-regular fa-house fa-fw"></i>
+<nav id="menu-mobile">
+    <div class="column-menu">
+        <div class="menu-item-group">
+            <a
+                class:list={["menu-item", { active: isActive === "home" }]}
+                href="/"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><path
+                                d="M3.75 9.75L12 3.25l8.25 6.5v8.5a2 2 0 0 1-2 2H5.75a2 2 0 0 1-2-2Z"
+                            ></path><path
+                                d="M9.75 20.25V15.5a2.25 2.25 0 0 1 4.5 0v4.75"
+                            ></path></g
+                        ></svg
+                    >
+                </span>
+
+                <span class="text">Home</span>
+            </a>
+
+            <a
+                class:list={["menu-item", { active: isActive === "projects" }]}
+                href="/projects"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="square"
+                            stroke-miterlimit="2"
+                            stroke-width="1.5"
+                            ><path
+                                d="M9 17.25V5.533l.8-.163l9.5-1.9l1.2-.245V15.25"
+                            ></path><circle cx="6.25" cy="17.25" r="2.75"
+                            ></circle><circle cx="17.75" cy="15.25" r="2.75"
+                            ></circle></g
+                        ></svg
+                    >
+                </span>
+
+                <span class="text">Projects</span>
+            </a>
+
+            <span
+                class:list={[
+                    "menu-item",
+                    {
+                        active: [
+                            "search",
+                            "experiments",
+                            "about-me",
+                            "settings",
+                        ].includes(isActive),
+                    },
+                ]}
+                id="showAllBtn"
+            >
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><circle cx="12" cy="12" r="9.25"/><path d="M12 8.25v7.5M8.25 12h7.5"/></g></svg>
+                </span>
+
+                <span class="text">More</span>
             </span>
+        </div>
 
-            <span class="text">Home</span>
-        </a>
+        <div class="menu-item-group" id="mobile-menu-more">
+            <a
+                class:list={["menu-item", { active: isActive === "search" }]}
+                href="/search"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><path
+                                d="M9.75 2.75a7 7 0 1 1 0 14a7 7 0 1 1 0-14m7.69 12.04l2.47 2.47q1.24 1.24 0 2.48l-.17.17q-1.24 1.24-2.48 0l-2.47-2.47q-1.24-1.24 0-2.48l.17-.17q1.24-1.24 2.48 0"
+                            ></path><path d="M6.25 9.75a3.5 3.5 0 0 1 3.5-3.5"
+                            ></path></g
+                        ></svg
+                    >
+                </span>
 
-        <a
-            class={`menu-item ${active === "projects" ? "active" : ""}`}
-            href="/projects"
-        >
-            <span class="icon">
-                <i class="fa-solid fa-music fa-fw"></i>
-            </span>
+                <span class="text">Search</span>
+            </a>
 
-            <span class="text">Projects</span>
-        </a>
+            <a
+                class:list={[
+                    "menu-item",
+                    { active: isActive === "experiments" },
+                ]}
+                href="/experiments"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M10 2.75h4v6.1L16.96 14H7.04L10 8.85ZM7.04 14h9.92l2.24 3.9a2.25 2.25 0 0 1-1.95 3.35H6.79a2.25 2.25 0 0 1-1.95-3.35ZM8.5 2.75h7"
+                        ></path></svg
+                    >
+                </span>
 
-        <a
-            class={`menu-item ${active === "experiments" ? "active" : ""}`}
-            href="/experiments"
-        >
-            <span class="icon">
-                <i class="fa-solid fa-flask fa-fw"></i>
-            </span>
+                <span class="text">Experiments</span>
+            </a>
 
-            <span class="text">Experiments</span>
-        </a>
+            <a
+                class:list={["menu-item", { active: isActive === "about-me" }]}
+                href="/about-me"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><rect
+                                width="18.5"
+                                height="18.5"
+                                x="2.75"
+                                y="2.75"
+                                rx="4"></rect><circle cx="12" cy="10" r="3"
+                            ></circle><path
+                                d="M6.75 21.25c.6-2.75 2.75-4.5 5.25-4.5s4.65 1.75 5.25 4.5"
+                            ></path></g
+                        ></svg
+                    >
+                </span>
 
-        <a
-            class={`menu-item ${active === "about-me" ? "active" : ""}`}
-            href="/about-me"
-        >
-            <span class="icon">
-                <i class="fa-solid fa-clipboard-user fa-fw"></i>
-            </span>
+                <span class="text">About Me</span>
+            </a>
 
-            <span class="text">About Me</span>
-        </a>
+            <a
+                class:list={["menu-item", { active: isActive === "settings" }]}
+                href="/settings"
+            >
+                <span class="icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="auto"
+                        viewBox="0 0 24 24"
+                        ><path d="M0 0h24v24H0z" fill="none"></path><g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><path
+                                d="m10.36 4.57l.1-.96q.07-.74.82-.74h1.44q.75 0 .82.74l.1.96q.07.74.76 1.03l.43.18q.69.29 1.27-.19l.74-.61q.58-.48 1.11.05l1.02 1.02q.53.53.05 1.11l-.61.74q-.48.58-.19 1.27l.18.43q.29.69 1.03.76l.96.1q.74.07.74.82v1.44q0 .75-.74.82l-.96.1q-.74.07-1.03.76l-.18.43q-.29.69.19 1.27l.61.74q.48.58-.05 1.11l-1.02 1.02q-.53.53-1.11.05l-.74-.61q-.58-.48-1.27-.19l-.43.18q-.69.29-.76 1.03l-.1.96q-.07.74-.82.74h-1.44q-.75 0-.82-.74l-.1-.96q-.07-.74-.76-1.03l-.43-.18q-.69-.29-1.27.19l-.74.61q-.58.48-1.11-.05l-1.02-1.02q-.53-.53-.05-1.11l.61-.74q.48-.58.19-1.27l-.18-.43q-.29-.69-1.03-.76l-.96-.1q-.74-.07-.74-.82v-1.44q0-.75.74-.82l.96-.1q.74-.07 1.03-.76l.18-.43q.29-.69-.19-1.27l-.61-.74q-.48-.58.05-1.11l1.02-1.02q.53-.53 1.11-.05l.74.61q.58.48 1.27.19l.43-.18q.69-.29.76-1.03"
+                            ></path><circle cx="12" cy="12" r="3"></circle></g
+                        ></svg
+                    >
+                </span>
+
+                <span class="text">Settings</span>
+            </a>
+        </div>
     </div>
+</nav>
 
-    <div class="menu-item-group">
-        <a
-            class={`menu-item ${active === "settings" ? "active" : ""}`}
-            href="/settings"
-        >
-            <span class="icon">
-                <i class="fa-solid fa-gear fa-fw"></i>
-            </span>
+<script>
+    const showAllButton = document.getElementById("showAllBtn");
+    const menuElement = document.getElementById("menu-mobile");
 
-            <span class="text">Settings</span>
-        </a>
-    </div>
-</div>
+    showAllButton?.addEventListener("click", () => {
+        console.log("clicked");
+        menuElement?.classList.toggle("show-all");
+    });
+</script>
